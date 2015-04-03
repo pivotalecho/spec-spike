@@ -9,8 +9,8 @@ class EchoApiServer
     @api_server_pid = Process.spawn(
       "rackup #{@rack_config} -p #{@port}", 
       chdir: @root, 
-      pgroup: true
-      # [:out, :err] => '/dev/null'
+      pgroup: true,
+      [:out, :err] => '/dev/null'
     )
   end
 
